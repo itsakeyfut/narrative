@@ -1,0 +1,76 @@
+[package]
+name = "narrative-gui"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+license.workspace = true
+description = "Custom wgpu-based GUI framework for Narrative Novel editor"
+publish = false
+
+[dependencies]
+# Internal dependencies
+narrative-core = { path = "../core" }
+
+# Window management
+winit.workspace = true
+raw-window-handle.workspace = true
+
+# GPU rendering
+wgpu.workspace = true
+bytemuck.workspace = true
+
+# Layout engine
+taffy.workspace = true
+
+# Text rendering
+cosmic-text.workspace = true
+swash.workspace = true
+
+# LRU cache for glyph atlas
+lru.workspace = true
+
+# Error handling
+anyhow.workspace = true
+thiserror.workspace = true
+
+# Logging
+tracing.workspace = true
+tracing-subscriber.workspace = true
+
+# Async runtime
+tokio.workspace = true
+
+# Serialization
+serde.workspace = true
+serde_json.workspace = true
+ron.workspace = true
+
+# Date/time
+chrono.workspace = true
+
+# UUID
+uuid.workspace = true
+
+# Synchronization
+parking_lot.workspace = true
+
+# Image processing
+image.workspace = true
+
+# File dialogs
+rfd.workspace = true
+
+# Native menu bar
+muda.workspace = true
+
+# Scope guards for cleanup
+scopeguard.workspace = true
+
+# Async blocking (for wgpu initialization)
+pollster.workspace = true
+
+[features]
+default = []
+# Enable GPU-accelerated rendering (always on for now)
+gpu-rendering = []

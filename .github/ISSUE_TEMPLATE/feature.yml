@@ -1,0 +1,155 @@
+name: "Feature Request"
+description: "Propose new features or share ideas"
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Feature Request
+        Use this template if you have a new feature proposal or idea.
+        For features requiring detailed specifications, please use the **PBI (Product Backlog Item)** template instead.
+
+  - type: textarea
+    id: feature-summary
+    attributes:
+      label: Feature Summary
+      description: Briefly describe the proposed feature
+      placeholder: |
+        Example: Ability to dynamically change typewriter effect speed
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation & Background
+      description: Explain why this feature is needed and what problem it solves
+      placeholder: |
+        Example: Currently, text speed can only be changed via config files, but players
+        cannot adjust the speed in real-time during gameplay, resulting in poor UX.
+        Other major VN engines provide this as a standard feature.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Implementation
+      description: If you have ideas on how this should be implemented, describe them here
+      placeholder: |
+        Example:
+        - Add a slider to the settings screen to adjust text speed in 10 levels (1-10)
+        - Also allow adjustment via keyboard shortcuts (+/- keys)
+        - Save the setting value to save data and maintain it on next launch
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives
+      description: Describe any other approaches or alternatives you've considered
+      placeholder: |
+        Example:
+        - Support config file hot-reload (simpler approach)
+        - Make it adjustable only in development mode
+    validations:
+      required: false
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: Select the category this feature relates to
+      options:
+        - "Dialogue & Text Display"
+        - "Character Display & Animation"
+        - "Background & Scene Transitions"
+        - "Choice System"
+        - "Save & Load"
+        - "Flag & Variable Management"
+        - "Audio (BGM/SE/Voice)"
+        - "UI & Menus"
+        - "Scenario Format"
+        - "Editor & Tools"
+        - "Performance Optimization"
+        - "Developer Experience (DX)"
+        - "Player Experience (UX)"
+        - "Other"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority (Proposer's Perspective)
+      description: How important do you think this feature is?
+      options:
+        - "P0: Essential (VN cannot function without this)"
+        - "P1: Important (Standard feature expected by players)"
+        - "P2: Nice to have (Common in many VNs)"
+        - "P3: Would be nice (Differentiating factor)"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: phase
+    attributes:
+      label: Implementation Phase (Suggestion)
+      description: In which phase do you think this should be implemented? (Ref: docs/design/roadmap.md)
+      options:
+        - "Phase 1: Core VN (Basic VN features)"
+        - "Phase 2: Standard VN (Standard VN features)"
+        - "Phase 3: Full-Featured VN (Full-featured VN)"
+        - "Phase 4: Dating Sim (Simulation features)"
+        - "Future: Future features"
+    validations:
+      required: false
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Reference Implementations & Similar Features
+      description: If there are implementation examples in other VN engines or games, describe them
+      placeholder: |
+        - Ren'Py: Set characters/second with preferences.text_cps
+        - Naninovel: Speed slider in TextPrinterPanel
+        - Tokimeki Memorial GS4: Text speed adjustable in 5 levels in options
+    validations:
+      required: false
+
+  - type: textarea
+    id: design-docs
+    attributes:
+      label: Related Design Documents
+      description: If there are related design documents or Issues, describe them
+      placeholder: |
+        - Listed in "1.2 Text Control" in docs/design/features.md
+        - #123 (Related Issue)
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-notes
+    attributes:
+      label: Additional Information
+      description: Any other useful information
+      placeholder: |
+        - This feature is frequently requested by users
+        - Implementation difficulty is expected to be low
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Please confirm the following before submitting
+      options:
+        - label: I've confirmed this feature hasn't been proposed in existing Issues
+          required: true
+        - label: I've checked docs/design/features.md and confirmed this isn't already planned
+          required: false
+        - label: This is a new feature proposal, not a bug fix
+          required: false

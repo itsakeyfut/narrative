@@ -1,0 +1,34 @@
+[package]
+name = "narrative-game"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+license.workspace = true
+description = "Narrative Novel Game Application"
+
+[[bin]]
+name = "narrative-game"
+path = "src/main.rs"
+
+[dependencies]
+narrative-engine = { path = "../engine" }
+narrative-core = { path = "../core" }
+narrative-gui = { path = "../gui" }
+
+# Image processing
+image.workspace = true
+
+# Layout
+taffy.workspace = true
+
+# Error handling
+anyhow.workspace = true
+
+# Logging
+tracing.workspace = true
+tracing-subscriber.workspace = true
+
+[features]
+default = []
+dev = ["narrative-engine/debug"]

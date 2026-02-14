@@ -1,0 +1,13 @@
+/target                                                                                                                                                           
+Cargo.lock                                                                                                                                                        
+                                                                                                                                                                  
+docs/                                                                                                                                                             
+                                                                                                                                                                  
+screenshots/                                                                                                                                                      
+saves/                                                                                                                                                            
+assets/                                                                                                                                                           
+                                                                                                                                                                  
+.claude/settings.local.json                                                                                                                                       
+.claude/commands/finish.md                                                                                                                                        
+.claude/commands/impl.md                                                                                                                                          
+.claude/commands/investigate.md 

@@ -1,0 +1,24 @@
+[package]
+name = "narrative-core"
+version = "0.1.0"
+description = "Core types for Narrative Novel Engine"
+edition.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+license.workspace = true
+
+[dependencies]
+# Serialization - required for scenario/config formats
+serde = { workspace = true }
+ron = { workspace = true }
+toml = { workspace = true }
+
+# Error handling
+thiserror = { workspace = true }
+
+[dev-dependencies]
+serde_json.workspace = true
+tempfile.workspace = true
+
+[features]
+default = []

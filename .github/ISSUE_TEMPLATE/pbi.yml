@@ -1,0 +1,147 @@
+name: "PBI (Product Backlog Item)"
+description: "Product backlog item for feature additions and improvements"
+title: "[PBI] "
+labels: ["enhancement", "pbi"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Product Backlog Item
+        Use this template to define detailed specifications for new features or improvements.
+        Acceptance Criteria will serve as completion criteria and be automatically verified during code review.
+
+        **When to use:**
+        - Simple feature proposal → Feature Request template
+        - Large feature requiring detailed specs → This PBI template
+
+  - type: textarea
+    id: pbi
+    attributes:
+      label: PBI (Product Backlog Item)
+      description: Briefly describe the feature or improvement to be implemented
+      placeholder: |
+        Example: Implement dialogue box customization feature
+        Example: Implement Live2D character display functionality
+        Example: Implement conditional branching system for choices
+    validations:
+      required: true
+
+  - type: textarea
+    id: user-story
+    attributes:
+      label: User Story
+      description: "Describe in the format: 'who', 'what', 'why'"
+      placeholder: |
+        As a [game developer/scenario writer/player],
+        I want [what to achieve],
+        So that [value/reason obtained].
+
+        Example:
+        As a scenario writer,
+        I want to easily specify character expressions in TOML files,
+        So that I can create rich presentations without programming knowledge.
+      value: |
+        As a [game developer/scenario writer/player],
+        I want [what to achieve],
+        So that [value/reason obtained].
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: |
+        Describe specific conditions for considering implementation complete in checklist format.
+        These will be automatically verified during code review.
+      placeholder: |
+        Example (for dialogue box customization):
+        - [ ] AC1: Can specify background color, border color, and opacity in TOML file
+        - [ ] AC2: Custom settings render correctly
+        - [ ] AC3: Settings are preserved after save/load
+        - [ ] AC4: Falls back to default values when settings are invalid
+        - [ ] AC5: Performance impact is within 5% (maintains 60fps)
+        - [ ] AC6: Documentation (docs/scenario-format.md) is updated
+      value: |
+        - [ ] AC1:
+        - [ ] AC2:
+        - [ ] AC3:
+        - [ ] AC4:
+    validations:
+      required: true
+
+  - type: textarea
+    id: technical-notes
+    attributes:
+      label: Technical Notes
+      description: Describe technical constraints or considerations for implementation
+      placeholder: |
+        Example:
+        - Performance requirements: Maintain stable 60fps (processing time <16ms)
+        - Data format: Design in TOML format that's understandable to non-programmers
+        - Error handling: No unwrap()/expect(), proper error handling with thiserror
+        - Rendering: Keep Runtime and Renderer loosely coupled with RenderCommand pattern
+        - Asset management: Enable continuation with placeholders when missing (Graceful Degradation)
+        - Japanese support: UTF-8 encoding, high-quality rendering with cosmic-text
+        - Save data: Prevent corruption with versioning and validation
+        - State machine: Design InGameState transitions correctly
+        - Documentation: Update docs/scenario-format.md
+        - Dependency crates: wgpu, cosmic-text, kira, serde, toml
+    validations:
+      required: false
+
+  - type: textarea
+    id: out-of-scope
+    attributes:
+      label: Out of Scope
+      description: Clearly state what is NOT addressed in this PBI
+      placeholder: |
+        Example (for dialogue box customization):
+        - Animation effects are out of scope (planned for Phase 2)
+        - GUI editor configuration for future implementation (manual TOML only for now)
+        - Style switching feature to be addressed in separate PBI
+        - Live2D integration out of scope
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: Select the priority of this PBI
+      options:
+        - "P0: Critical (immediate response)"
+        - "P1: High (next sprint)"
+        - "P2: Medium (planned)"
+        - "P3: Low (backlog)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: size
+    attributes:
+      label: Size Estimate
+      description: Select estimated implementation size
+      options:
+        - "XS (a few hours)"
+        - "S (1 day)"
+        - "M (2-3 days)"
+        - "L (1 week)"
+        - "XL (over 1 week - split recommended)"
+    validations:
+      required: false
+
+  - type: textarea
+    id: related-issues
+    attributes:
+      label: Related Issues / References
+      description: If there are related Issues, PRs, or documents, list them here
+      placeholder: |
+        - #123 (Related Issue)
+        - docs/design/features.md (Feature list)
+        - docs/design/architecture.md (Architecture design)
+        - docs/scenario-format.md (Scenario format specification)
+        - docs/design/engine/renderer.md (Renderer design)
+        - docs/design/roadmap.md (Implementation roadmap)
+    validations:
+      required: false

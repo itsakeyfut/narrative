@@ -1,0 +1,36 @@
+[package]
+name = "narrative-editor"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+license.workspace = true
+description = "Visual Novel Engine Editor (GUI authoring tool)"
+
+[[bin]]
+name = "narrative-editor"
+path = "src/main.rs"
+
+[dependencies]
+# Internal dependencies
+narrative-core = { path = "../core" }
+narrative-engine = { path = "../engine" }
+narrative-gui = { path = "../gui" }
+
+# File dialogs
+rfd.workspace = true
+
+# File watching (for hot-reload)
+notify = { workspace = true, optional = true }
+crossbeam-channel = { workspace = true, optional = true }
+
+# Logging
+tracing.workspace = true
+tracing-subscriber.workspace = true
+
+# Error handling
+anyhow.workspace = true
+
+[features]
+default = []
+hot-reload = ["dep:notify", "dep:crossbeam-channel"]

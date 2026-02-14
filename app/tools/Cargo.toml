@@ -1,0 +1,44 @@
+[package]
+name = "narrative-tools"
+version = "0.1.0"
+description = "Development tools for visual novel creation"
+edition.workspace = true
+
+[lib]
+name = "narrative_tools"
+path = "src/lib.rs"
+
+# Multiple binary tools
+[[bin]]
+name = "scenario-validator"
+path = "src/bin/scenario_validator.rs"
+
+[[bin]]
+name = "asset-converter"
+path = "src/bin/asset_converter.rs"
+
+[[bin]]
+name = "scenario-editor"
+path = "src/bin/scenario_editor.rs"
+
+[[bin]]
+name = "perf-test"
+path = "src/bin/perf_test.rs"
+
+[dependencies]
+# Use workspace dependencies
+anyhow.workspace = true
+serde.workspace = true
+toml.workspace = true
+
+# Local crates
+narrative-engine = { path = "../engine" }
+narrative-game = { path = "../game" }
+narrative-gui = { path = "../gui" }
+
+# Tool-specific dependencies
+clap = { version = "4.0", features = ["derive"] }  # Command-line argument parsing
+walkdir = "2.0"           # Directory traversal
+indicatif = "0.18"        # Progress bars
+tracing.workspace = true
+tracing-subscriber.workspace = true
