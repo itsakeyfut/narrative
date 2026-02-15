@@ -10,4 +10,5 @@ assets/
 .claude/settings.local.json                                                                                                                                       
 .claude/commands/finish.md                                                                                                                                        
 .claude/commands/impl.md                                                                                                                                          
-.claude/commands/investigate.md 
+.claude/commands/investigate.md
+.claude/tmp/**
