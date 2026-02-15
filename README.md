@@ -2,6 +2,10 @@
 
 A wgpu-based visual novel engine
 
+![Title](./samples/title_1.png)
+
+![Scenario 1](./samples/scenario_1.png)
+
 ## Quick Start
 
 ```sh
